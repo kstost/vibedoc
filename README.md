@@ -35,38 +35,20 @@ VibeDOC은 코딩을 전혀 모르는 사람들을 위해 간단한 아이디어
 3. **TODO 생성**: TRD를 기반으로 개발 할일 목록 생성
 
 ### ⚙️ 환경변수 기반 설정
-- 모델별 세부 설정 가능 (GPT-4, GPT-3.5 등)
+- 모델별 세부 설정 가능 (GPT-5, GPT-4 등)
 - Verbosity 및 Reasoning effort 조절
 - 각 단계별 독립적 설정 지원
 
 ## 🚀 설치 및 실행
 
 ### 필수 요구사항
-- Node.js >= 14.0.0
-- npm >= 6.0.0
 - OpenAI API Key (필수)
 
-### 전역 설치 (권장)
+### 설치
 ```bash
-# npm을 통한 전역 설치
-npm install -g vibedoc
-
-# 어디서든 실행 가능
-vibedoc
+npm i vibedoc -g
 ```
 
-### 로컬 설치
-```bash
-# 저장소 클론
-git clone https://github.com/username/vibedoc.git
-cd vibedoc
-
-# 의존성 설치
-npm install
-
-# 실행 가능하게 만들기
-chmod +x vibedoc.js
-```
 
 ### 환경변수 설정
 `.env` 파일을 생성하고 다음 설정을 추가하세요:
@@ -76,24 +58,23 @@ chmod +x vibedoc.js
 OPENAI_API_KEY=your-openai-api-key-here
 
 # PRD 생성용 설정
-OPENAI_PRD_MODEL=gpt-4
+OPENAI_PRD_MODEL=gpt-5
 OPENAI_PRD_VERBOSITY=low
 OPENAI_PRD_REASONING_EFFORT=minimal
 
 # TRD 생성용 설정
-OPENAI_TRD_MODEL=gpt-4
+OPENAI_TRD_MODEL=gpt-5
 OPENAI_TRD_VERBOSITY=high
 OPENAI_TRD_REASONING_EFFORT=high
 
 # TODO 생성용 설정
-OPENAI_TODO_MODEL=gpt-4
+OPENAI_TODO_MODEL=gpt-5
 OPENAI_TODO_VERBOSITY=high
 OPENAI_TODO_REASONING_EFFORT=high
 ```
 
 ### 실행
 
-#### 전역 설치한 경우
 ```bash
 vibedoc                    # 기본 실행 (10개 질문)
 vibedoc --help             # 도움말 보기
@@ -103,13 +84,6 @@ vibedoc -q 5               # 질문 5개로 설정
 vibedoc --questions 15     # 질문 15개로 설정
 vibedoc --skip-trd         # TRD 생성 건너뛰기
 vibedoc --skip-todo        # TODO 생성 건너뛰기
-```
-
-#### 로컬 설치한 경우
-```bash
-./vibedoc.js               # 직접 실행
-node vibedoc.js            # Node.js로 실행
-npm start                  # npm 스크립트로 실행
 ```
 
 ## 📖 사용법
@@ -164,8 +138,8 @@ AI가 다음 순서로 문서를 자동 생성합니다:
 
 ### 모델 설정
 각 단계별로 다른 OpenAI 모델 사용 가능:
-- `gpt-4`: 고품질, 상세한 결과 (권장)
-- `gpt-3.5-turbo`: 빠른 생성, 비용 효율적
+- `gpt-5`: 최신 모델, 최고 품질 (권장)
+- `gpt-4`: 고품질, 상세한 결과
 
 ### Verbosity 레벨
 - `low`: 간결한 결과
@@ -194,8 +168,8 @@ AI가 다음 순서로 문서를 자동 생성합니다:
 ## 📊 API 사용량 및 비용 예상
 
 ### 모델별 토큰 사용량 (예상)
+- **GPT-5**: ~4,000-6,000 tokens per document
 - **GPT-4**: ~3,000-5,000 tokens per document
-- **GPT-3.5-turbo**: ~2,000-3,000 tokens per document
 
 ### 예상 비용 (USD, 2024년 기준)
 - **완전한 문서 세트 (PRD + TRD + TODO)**: $0.15 - $0.50
