@@ -196,36 +196,7 @@ npm install
 vibedoc --verbose
 ```
 
-## 🤝 기여하기
 
-### 개발 환경 설정
-```bash
-# 저장소 포크 후 클론
-git clone https://github.com/yourusername/vibedoc.git
-cd vibedoc
-npm install
-
-# 개발 모드로 실행
-npm run dev
-```
-
-### 기여 가이드라인
-1. 이슈를 먼저 생성하여 논의
-2. Feature branch 생성 (`git checkout -b feature/amazing-feature`)
-3. 변경사항 커밋 (`git commit -m 'Add amazing feature'`)
-4. Branch에 푸시 (`git push origin feature/amazing-feature`)
-5. Pull Request 생성
-
-### 코딩 스타일
-- ESLint 설정 준수
-- 한국어 주석 및 메시지 사용
-- 타입 안정성을 위한 JSDoc 주석 권장
-
-## 📞 지원 및 문의
-
-- **버그 리포트**: [GitHub Issues](https://github.com/username/vibedoc/issues)
-- **기능 요청**: [GitHub Discussions](https://github.com/username/vibedoc/discussions)
-- **이메일**: contact@vibedoc.dev
 
 ## 🗺️ 로드맵
 
@@ -287,36 +258,3 @@ vibedoc --skip-todo
 vibedoc -q 5 -v --skip-trd
 ```
 
-## 💡 사용 예시
-
-```bash
-$ vibedoc
-🚀 VibeDOC - Vibe Document Generator
-쉽게 PRD, TRD, TODO List를 만들 수 있는 문서 생성 도구
-
-? 만들고자 하는 프로젝트에 대해 간단히 설명해주세요: 사진을 첨부할 수 있는 개인 일기장 웹앱
-
-[1/10] ? 주요 사용자층은 누구인가요?
-❯ 개인 사용자
-  소규모 팀
-  기업 사용자
-  교육 기관
-
-...질문 진행...
-
-✅ 설문이 완료되었습니다!
-🔄 PRD 문서를 생성하고 있습니다...
-✅ PRD 생성 완료: prd.md
-🔄 PRD를 바탕으로 TRD(기술요구사항문서)를 생성하고 있습니다...
-✅ TRD 생성 완료: trd.md
-🔄 TRD를 바탕으로 TODO 목록을 생성하고 있습니다...
-✅ TODO 변환 완료: todo.md
-
-🎉 전체 문서 생성이 완료되었습니다!
-생성된 파일들:
-  • prd.md - 제품요구사항문서
-  • trd.md - 기술요구사항문서  
-  • todo.md - 개발 할일 목록
-
-✨ 이제 바이브코딩을 시작할 준비가 되었습니다!
-```
