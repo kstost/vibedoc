@@ -1,5 +1,9 @@
 # VibeDOC 📝
 
+[![npm version](https://badge.fury.io/js/vibedoc.svg)](https://badge.fury.io/js/vibedoc)
+[![Node.js CI](https://github.com/username/vibedoc/workflows/Node.js%20CI/badge.svg)](https://github.com/username/vibedoc/actions)
+[![License: AGPL-3.0](https://img.shields.io/badge/License-AGPL%203.0-blue.svg)](https://opensource.org/licenses/AGPL-3.0)
+
 쉽게 PRD, TRD, TODO List를 만들 수 있는 vibe document 생성 도구
 
 ## 🎯 개요
@@ -40,6 +44,7 @@ VibeDOC은 코딩을 전혀 모르는 사람들을 위해 간단한 아이디어
 ### 필수 요구사항
 - Node.js >= 14.0.0
 - npm >= 6.0.0
+- OpenAI API Key (필수)
 
 ### 전역 설치 (권장)
 ```bash
@@ -53,7 +58,7 @@ vibedoc
 ### 로컬 설치
 ```bash
 # 저장소 클론
-git clone [repository-url]
+git clone https://github.com/username/vibedoc.git
 cd vibedoc
 
 # 의존성 설치
@@ -179,6 +184,95 @@ AI가 다음 순서로 문서를 자동 생성합니다:
 - **Chalk**: 터미널 색상 출력
 - **Ora**: 로딩 스피너
 - **dotenv**: 환경변수 관리
+
+## 🚨 주의사항
+
+- OpenAI API 사용으로 인한 비용이 발생할 수 있습니다
+- `.env` 파일에 API 키를 안전하게 보관하세요
+- 생성된 문서는 프로젝트에 맞게 추가 검토 및 수정이 필요할 수 있습니다
+
+## 📊 API 사용량 및 비용 예상
+
+### 모델별 토큰 사용량 (예상)
+- **GPT-4**: ~3,000-5,000 tokens per document
+- **GPT-3.5-turbo**: ~2,000-3,000 tokens per document
+
+### 예상 비용 (USD, 2024년 기준)
+- **완전한 문서 세트 (PRD + TRD + TODO)**: $0.15 - $0.50
+- **단일 문서**: $0.05 - $0.15
+
+## 🔧 트러블슈팅
+
+### 자주 발생하는 문제
+
+#### API 키 관련 오류
+```
+Error: OpenAI API key not found
+```
+**해결방법**: `.env` 파일에 `OPENAI_API_KEY=your-key-here` 추가
+
+#### 권한 오류
+```
+permission denied: ./vibedoc.js
+```
+**해결방법**: `chmod +x vibedoc.js` 실행
+
+#### 의존성 설치 실패
+**해결방법**: Node.js 버전 확인 및 캐시 정리
+```bash
+node --version  # 14.0.0 이상 확인
+npm cache clean --force
+npm install
+```
+
+### 디버그 모드
+상세한 로그가 필요한 경우:
+```bash
+vibedoc --verbose
+```
+
+## 🤝 기여하기
+
+### 개발 환경 설정
+```bash
+# 저장소 포크 후 클론
+git clone https://github.com/yourusername/vibedoc.git
+cd vibedoc
+npm install
+
+# 개발 모드로 실행
+npm run dev
+```
+
+### 기여 가이드라인
+1. 이슈를 먼저 생성하여 논의
+2. Feature branch 생성 (`git checkout -b feature/amazing-feature`)
+3. 변경사항 커밋 (`git commit -m 'Add amazing feature'`)
+4. Branch에 푸시 (`git push origin feature/amazing-feature`)
+5. Pull Request 생성
+
+### 코딩 스타일
+- ESLint 설정 준수
+- 한국어 주석 및 메시지 사용
+- 타입 안정성을 위한 JSDoc 주석 권장
+
+## 📞 지원 및 문의
+
+- **버그 리포트**: [GitHub Issues](https://github.com/username/vibedoc/issues)
+- **기능 요청**: [GitHub Discussions](https://github.com/username/vibedoc/discussions)
+- **이메일**: contact@vibedoc.dev
+
+## 🗺️ 로드맵
+
+### v1.1.0 (예정)
+- [ ] 다국어 지원 (영어)
+- [ ] 커스텀 템플릿 지원
+- [ ] 웹 인터페이스 추가
+
+### v1.2.0 (예정)
+- [ ] Notion, Confluence 내보내기
+- [ ] 협업 기능
+- [ ] 프로젝트 히스토리 관리
 
 ## 📄 라이선스
 
