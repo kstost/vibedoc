@@ -50,28 +50,6 @@ npm i vibedoc -g
 ```
 
 
-### 환경변수 설정
-`.env` 파일을 생성하고 다음 설정을 추가하세요:
-
-```env
-# OpenAI API Key (필수)
-OPENAI_API_KEY=your-openai-api-key-here
-
-# PRD 생성용 설정
-OPENAI_PRD_MODEL=gpt-5
-OPENAI_PRD_VERBOSITY=low
-OPENAI_PRD_REASONING_EFFORT=minimal
-
-# TRD 생성용 설정
-OPENAI_TRD_MODEL=gpt-5
-OPENAI_TRD_VERBOSITY=high
-OPENAI_TRD_REASONING_EFFORT=high
-
-# TODO 생성용 설정
-OPENAI_TODO_MODEL=gpt-5
-OPENAI_TODO_VERBOSITY=high
-OPENAI_TODO_REASONING_EFFORT=high
-```
 
 ### 실행
 
@@ -88,10 +66,33 @@ vibedoc --skip-todo        # TODO 생성 건너뛰기
 
 ## 📖 사용법
 
-### 1️⃣ 프로젝트 설명
-먼저 만들고자 하는 프로젝트에 대해 간단히 설명합니다.
+### 1️⃣ API 키 설정
+```bash
+vibedoc config set apikey [your-openai-api-key]
+```
 
-### 2️⃣ 질문 응답
+### 2️⃣ 모델 설정 (선택사항)
+```bash
+# 전체 모델 설정
+vibedoc config set model gpt-5
+
+# 단계별 모델 설정
+vibedoc config set prd-model gpt-5
+vibedoc config set trd-model gpt-4
+vibedoc config set todo-model gpt-4
+```
+
+### 3️⃣ 설정 확인
+```bash
+vibedoc config list
+```
+
+### 4️⃣ 문서 생성 시작
+```bash
+vibedoc
+```
+
+### 5️⃣ 질문 응답
 시스템이 제시하는 10개의 질문에 순차적으로 답변합니다:
 - 대상 사용자
 - 핵심 기능
@@ -100,13 +101,13 @@ vibedoc --skip-todo        # TODO 생성 건너뛰기
 - 보안 요구사항
 - 등등...
 
-### 3️⃣ 문서 생성 대기
+### 6️⃣ 문서 생성 대기
 AI가 다음 순서로 문서를 자동 생성합니다:
 1. PRD 문서 생성 → `prd.md` 저장
 2. TRD 문서 생성 → `trd.md` 저장
 3. TODO 목록 생성 → `todo.md` 저장
 
-### 4️⃣ 결과 확인
+### 7️⃣ 결과 확인
 생성된 세 개의 마크다운 파일을 확인하고 ✨ 바이브코딩을 시작하세요!
 
 ## 📁 생성되는 파일
