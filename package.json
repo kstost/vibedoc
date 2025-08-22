@@ -1,0 +1,50 @@
+{
+  "name": "vibedoc",
+  "version": "1.0.0",
+  "description": "쉽게 PRD, TRD, TODO List를 만들 수 있는 vibe document 생성 도구",
+  "main": "vibedoc.js",
+  "type": "module",
+  "license": "AGPL-3.0",
+  "private": false,
+  "bin": {
+    "vibedoc": "./vibedoc.js"
+  },
+  "engines": {
+    "node": ">= 14.0.0",
+    "npm": ">= 6.0.0"
+  },
+  "homepage": "https://github.com/username/vibedoc#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/username/vibedoc.git"
+  },
+  "bugs": "https://github.com/username/vibedoc/issues",
+  "keywords": [
+    "prd",
+    "trd",
+    "todo",
+    "document-generator",
+    "ai",
+    "openai",
+    "cli",
+    "development-tools"
+  ],
+  "author": {
+    "name": "VibeDOC Team",
+    "email": "contact@vibedoc.dev",
+    "url": "https://vibedoc.dev"
+  },
+  "contributors": [],
+  "scripts": {
+    "start": "node vibedoc.js",
+    "dev": "node vibedoc.js",
+    "test": "echo \"No tests yet\""
+  },
+  "dependencies": {
+    "chalk": "^5.6.0",
+    "commander": "^14.0.0",
+    "openai": "^5.13.1",
+    "ora": "^8.2.0",
+    "prompts": "^2.4.2"
+  }
+}
